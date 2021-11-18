@@ -40,6 +40,7 @@ resource "aws_autoscaling_group" "grupo" {
     id = aws_launch_template.maquina.id
     version = "$Latest"
   }
+  target_group_arns = [ aws_lb_target_group.alvoLoadBalancer.arn ]
 }
 
 resource "aws_default_subnet" "subnet_1" {
